@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210924 17:44:02.696" rpa="false" schemaversion="2">
+<suite id="s1" name="Test" source="C:\Users\nboichuk\PycharmProjects\robot\src\test.robot">
+<kw name="Open browser to login page" library="resourse" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210924 17:44:02.906" level="INFO">Opening browser 'Chrome' to base url 'http://prestashop.qatestlab.com.ua/uk/'.</msg>
+<status status="PASS" starttime="20210924 17:44:02.905" endtime="20210924 17:44:05.257"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210924 17:44:05.257" endtime="20210924 17:44:05.380"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:02.905" endtime="20210924 17:44:05.380"/>
+</kw>
+<test id="s1-t1" name="Invalid Username">
+<kw name="Navigate to login page" library="resourse" type="SETUP">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[@class='login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:05.381" level="INFO">Clicking link 'xpath://a[@class='login']'.</msg>
+<status status="PASS" starttime="20210924 17:44:05.381" endtime="20210924 17:44:06.076"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:05.381" endtime="20210924 17:44:06.076"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arg>invalid</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Username" library="resourse">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:06.078" level="INFO">Typing text 'invalid' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20210924 17:44:06.077" endtime="20210924 17:44:06.154"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:06.077" endtime="20210924 17:44:06.154"/>
+</kw>
+<kw name="Input Password" library="resourse">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:passwd</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:06.156" level="INFO">Typing text '123456' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20210924 17:44:06.155" endtime="20210924 17:44:06.235"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:06.155" endtime="20210924 17:44:06.235"/>
+</kw>
+<kw name="Submit Credentials" library="resourse">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:SubmitLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:06.235" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20210924 17:44:06.235" endtime="20210924 17:44:06.927"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:06.235" endtime="20210924 17:44:06.927"/>
+</kw>
+<kw name="Login Should Have Failed" library="resourse">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:#center_column &gt; div.alert</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210924 17:44:06.947" level="INFO">Element 'css:#center_column &gt; div.alert' is displayed.</msg>
+<status status="PASS" starttime="20210924 17:44:06.927" endtime="20210924 17:44:06.948"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:06.927" endtime="20210924 17:44:06.948"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:06.076" endtime="20210924 17:44:06.948"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:05.380" endtime="20210924 17:44:06.948"/>
+</test>
+<test id="s1-t2" name="Invalid Password">
+<kw name="Navigate to login page" library="resourse" type="SETUP">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[@class='login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:06.951" level="INFO">Clicking link 'xpath://a[@class='login']'.</msg>
+<status status="PASS" starttime="20210924 17:44:06.951" endtime="20210924 17:44:07.674"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:06.951" endtime="20210924 17:44:07.674"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arg>${valid_email}</arg>
+<arg>invalid</arg>
+<kw name="Input Username" library="resourse">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:07.676" level="INFO">Typing text 'testmail11223@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20210924 17:44:07.676" endtime="20210924 17:44:07.761"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:07.675" endtime="20210924 17:44:07.761"/>
+</kw>
+<kw name="Input Password" library="resourse">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:passwd</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:07.762" level="INFO">Typing text 'invalid' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20210924 17:44:07.761" endtime="20210924 17:44:07.828"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:07.761" endtime="20210924 17:44:07.828"/>
+</kw>
+<kw name="Submit Credentials" library="resourse">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:SubmitLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:07.829" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20210924 17:44:07.828" endtime="20210924 17:44:08.469"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:07.828" endtime="20210924 17:44:08.470"/>
+</kw>
+<kw name="Login Should Have Failed" library="resourse">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:#center_column &gt; div.alert</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210924 17:44:08.487" level="INFO">Element 'css:#center_column &gt; div.alert' is displayed.</msg>
+<status status="PASS" starttime="20210924 17:44:08.470" endtime="20210924 17:44:08.487"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:08.470" endtime="20210924 17:44:08.487"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:07.675" endtime="20210924 17:44:08.487"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:06.950" endtime="20210924 17:44:08.488"/>
+</test>
+<test id="s1-t3" name="Invalid Username And Password">
+<kw name="Navigate to login page" library="resourse" type="SETUP">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[@class='login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:08.491" level="INFO">Clicking link 'xpath://a[@class='login']'.</msg>
+<status status="PASS" starttime="20210924 17:44:08.490" endtime="20210924 17:44:09.251"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:08.490" endtime="20210924 17:44:09.251"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arg>invalid</arg>
+<arg>whatever</arg>
+<kw name="Input Username" library="resourse">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:09.252" level="INFO">Typing text 'invalid' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20210924 17:44:09.252" endtime="20210924 17:44:09.319"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:09.252" endtime="20210924 17:44:09.319"/>
+</kw>
+<kw name="Input Password" library="resourse">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:passwd</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:09.320" level="INFO">Typing text 'whatever' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20210924 17:44:09.320" endtime="20210924 17:44:09.387"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:09.319" endtime="20210924 17:44:09.387"/>
+</kw>
+<kw name="Submit Credentials" library="resourse">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:SubmitLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:09.388" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20210924 17:44:09.387" endtime="20210924 17:44:10.063"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:09.387" endtime="20210924 17:44:10.063"/>
+</kw>
+<kw name="Login Should Have Failed" library="resourse">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:#center_column &gt; div.alert</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210924 17:44:10.079" level="INFO">Element 'css:#center_column &gt; div.alert' is displayed.</msg>
+<status status="PASS" starttime="20210924 17:44:10.063" endtime="20210924 17:44:10.079"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:10.063" endtime="20210924 17:44:10.079"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:09.251" endtime="20210924 17:44:10.079"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:08.489" endtime="20210924 17:44:10.080"/>
+</test>
+<test id="s1-t4" name="Empty Username">
+<kw name="Navigate to login page" library="resourse" type="SETUP">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[@class='login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:10.081" level="INFO">Clicking link 'xpath://a[@class='login']'.</msg>
+<status status="PASS" starttime="20210924 17:44:10.081" endtime="20210924 17:44:10.839"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:10.081" endtime="20210924 17:44:10.840"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arg>${EMPTY}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Username" library="resourse">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:10.843" level="INFO">Typing text '' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20210924 17:44:10.842" endtime="20210924 17:44:10.900"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:10.842" endtime="20210924 17:44:10.900"/>
+</kw>
+<kw name="Input Password" library="resourse">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:passwd</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:10.901" level="INFO">Typing text '123456' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20210924 17:44:10.901" endtime="20210924 17:44:10.969"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:10.901" endtime="20210924 17:44:10.969"/>
+</kw>
+<kw name="Submit Credentials" library="resourse">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:SubmitLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:10.970" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20210924 17:44:10.970" endtime="20210924 17:44:11.633"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:10.969" endtime="20210924 17:44:11.633"/>
+</kw>
+<kw name="Login Should Have Failed" library="resourse">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:#center_column &gt; div.alert</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210924 17:44:11.647" level="INFO">Element 'css:#center_column &gt; div.alert' is displayed.</msg>
+<status status="PASS" starttime="20210924 17:44:11.633" endtime="20210924 17:44:11.647"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:11.633" endtime="20210924 17:44:11.648"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:10.840" endtime="20210924 17:44:11.648"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:10.081" endtime="20210924 17:44:11.648"/>
+</test>
+<test id="s1-t5" name="Empty Password">
+<kw name="Navigate to login page" library="resourse" type="SETUP">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[@class='login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:11.650" level="INFO">Clicking link 'xpath://a[@class='login']'.</msg>
+<status status="PASS" starttime="20210924 17:44:11.649" endtime="20210924 17:44:12.441"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:11.649" endtime="20210924 17:44:12.442"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arg>${valid_email}</arg>
+<arg>${EMPTY}</arg>
+<kw name="Input Username" library="resourse">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:12.446" level="INFO">Typing text 'testmail11223@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20210924 17:44:12.445" endtime="20210924 17:44:12.521"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:12.443" endtime="20210924 17:44:12.521"/>
+</kw>
+<kw name="Input Password" library="resourse">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:passwd</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:12.523" level="INFO">Typing text '' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20210924 17:44:12.522" endtime="20210924 17:44:12.581"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:12.521" endtime="20210924 17:44:12.581"/>
+</kw>
+<kw name="Submit Credentials" library="resourse">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:SubmitLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:12.582" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20210924 17:44:12.581" endtime="20210924 17:44:13.227"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:12.581" endtime="20210924 17:44:13.227"/>
+</kw>
+<kw name="Login Should Have Failed" library="resourse">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:#center_column &gt; div.alert</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210924 17:44:13.239" level="INFO">Element 'css:#center_column &gt; div.alert' is displayed.</msg>
+<status status="PASS" starttime="20210924 17:44:13.228" endtime="20210924 17:44:13.240"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:13.228" endtime="20210924 17:44:13.240"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:12.442" endtime="20210924 17:44:13.240"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:11.649" endtime="20210924 17:44:13.241"/>
+</test>
+<test id="s1-t6" name="Empty Username And Password">
+<kw name="Navigate to login page" library="resourse" type="SETUP">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[@class='login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:13.243" level="INFO">Clicking link 'xpath://a[@class='login']'.</msg>
+<status status="PASS" starttime="20210924 17:44:13.242" endtime="20210924 17:44:14.052"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:13.242" endtime="20210924 17:44:14.053"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<kw name="Input Username" library="resourse">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:14.055" level="INFO">Typing text '' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20210924 17:44:14.055" endtime="20210924 17:44:14.119"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:14.054" endtime="20210924 17:44:14.119"/>
+</kw>
+<kw name="Input Password" library="resourse">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:passwd</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:14.120" level="INFO">Typing text '' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20210924 17:44:14.120" endtime="20210924 17:44:14.180"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:14.119" endtime="20210924 17:44:14.180"/>
+</kw>
+<kw name="Submit Credentials" library="resourse">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:SubmitLogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210924 17:44:14.181" level="INFO">Clicking button 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20210924 17:44:14.181" endtime="20210924 17:44:14.844"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:14.180" endtime="20210924 17:44:14.844"/>
+</kw>
+<kw name="Login Should Have Failed" library="resourse">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css:#center_column &gt; div.alert</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210924 17:44:14.858" level="INFO">Element 'css:#center_column &gt; div.alert' is displayed.</msg>
+<status status="PASS" starttime="20210924 17:44:14.844" endtime="20210924 17:44:14.858"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:14.844" endtime="20210924 17:44:14.858"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:14.053" endtime="20210924 17:44:14.858"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:13.242" endtime="20210924 17:44:14.858"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210924 17:44:14.860" endtime="20210924 17:44:17.045"/>
+</kw>
+<status status="PASS" starttime="20210924 17:44:02.699" endtime="20210924 17:44:17.045"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
